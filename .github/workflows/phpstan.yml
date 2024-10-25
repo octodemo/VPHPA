@@ -1,6 +1,13 @@
 name: phpstan
 
-on: [push]
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  schedule:
+    - cron: '16 16 * * 3'
+  workflow_dispatch: # This allows manual trigger
 
 jobs:
   phpstan:
