@@ -25,8 +25,8 @@ jobs:
         uses: php-actions/phpstan@v3
         with:
           path: ./
-          vendored_phpstan_path: custom-phpstan.phar
-          command: --version
+          # vendored_phpstan_path: custom-phpstan.phar
+          # command: --version
 
       # - name: Upload SARIF file
       #   uses: github/codeql-action/upload-sarif@v2
