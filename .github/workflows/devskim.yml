@@ -12,6 +12,7 @@ on:
     branches: [ "main" ]
   schedule:
     - cron: '45 12 * * 2'
+  workflow_dispatch: # This allows manual trigger
 
 jobs:
   lint:
