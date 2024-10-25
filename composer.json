@@ -1,0 +1,15 @@
+{
+  "name": "octodemo/vphpa",
+  "description": "Damn Vulnerable Web Application (DVWA) is a PHP/MySQL web application that is damn vulnerable.",
+  "require": {
+    "php": ">=7.3",
+    "ext-mysqli": "*",
+    "ext-gd": "*",
+    "ext-pdo": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "DVWA\\": "dvwa/"
+    }
+  }
+}
