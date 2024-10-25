@@ -24,6 +24,6 @@ jobs:
       - name: PHPStan Static Analysis
         uses: php-actions/phpstan@v3
         with:
-          path: src/ inc/
+          path: ./
           vendored_phpstan_path: custom-phpstan.phar
           command: --version
