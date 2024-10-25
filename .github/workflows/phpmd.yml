@@ -16,13 +16,13 @@
 name: PHPMD
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    # The branches below must be a subset of the branches above
-    branches: [ "main" ]
-  schedule:
-    - cron: '45 19 * * 0'
+  # push:
+  #   branches: [ "main" ]
+  # pull_request:
+  #   # The branches below must be a subset of the branches above
+  #   branches: [ "main" ]
+  # schedule:
+  #   - cron: '45 19 * * 0'
   workflow_dispatch: # This allows manual trigger
 
 permissions:
