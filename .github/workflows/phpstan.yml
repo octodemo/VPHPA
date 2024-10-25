@@ -1,0 +1,22 @@
+name: phpstan
+
+on: [push]
+
+jobs:
+  phpstan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: php-actions/composer@v6
+
+      - name: Get custom PHAR
+        run: |
+          curl --silent -H "User-agent: cURL (https://github.com/php-actions)" -L \
+          "https://www.getrelease.download/phpstan/phpstan/1.8.11/phar" > custom-phpstan.phar
+
+      - name: PHPStan Static Analysis
+        uses: php-actions/phpstan@v3
+        with:
+          path: src/ inc/
+          vendored_phpstan_path: custom-phpstan.phar
+          command: --version
