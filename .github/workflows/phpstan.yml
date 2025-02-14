@@ -21,15 +21,15 @@ jobs:
       #     curl --silent -H "User-agent: cURL (https://github.com/php-actions)" -L \
       #     "getrelease.download/phpstan/phpstan/>=0.12/phar" > custom-phpstan.phar
 
-      - name: PHPStan Static Analysis
-        uses: php-actions/phpstan@v3
-        with:
-          path: ./
-          # vendored_phpstan_path: custom-phpstan.phar
-          command: --error-format=sarif > phpstan-results.sarif
-      # - name: Run PHPStan
-      #   continue-on-error: true
-      #   run: phpstan analyze --error-format=sarif > phpstan-results.sarif
+      # - name: PHPStan Static Analysis
+      #   uses: php-actions/phpstan@v3
+      #   with:
+      #     path: ./
+      #     # vendored_phpstan_path: custom-phpstan.phar
+      #     command: --error-format=sarif > phpstan-results.sarif
+      - name: Run PHPStan
+        continue-on-error: true
+        run: phpstan analyze --error-format=sarif > phpstan-results.sarif
 
       - name: Upload analysis results to GitHub
         uses: github/codeql-action/upload-sarif@v2
