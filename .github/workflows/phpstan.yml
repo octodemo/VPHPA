@@ -25,14 +25,14 @@ jobs:
         uses: php-actions/phpstan@v3
         with:
           path: ./
+          command: --level max --error-format=sarif > phpstan-results.sarif
           # vendored_phpstan_path: custom-phpstan.phar
-          # command: --version
       # - name: Run PHPStan
       #   continue-on-error: true
       #   run: phpstan analyze --error-format=sarif > phpstan-results.sarif
 
-      # - name: Upload analysis results to GitHub
-      #   uses: github/codeql-action/upload-sarif@v2
-      #   with:
-      #     sarif_file: phpstan-results.sarif
-      #     wait-for-processing: true
+      - name: Upload analysis results to GitHub
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          sarif_file: phpstan-results.sarif
+          wait-for-processing: true
