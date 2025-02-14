@@ -22,8 +22,9 @@ jobs:
       #     "getrelease.download/phpstan/phpstan/>=0.12/phar" > custom-phpstan.phar
 
       - name: PHPStan Static Analysis
-        uses: php-actions/phpstan@v3
+        uses: php-actions/phpstan@v3      
         with:
+          run: composer require --dev phpstan/phpstan jbelien/phpstan-sarif-formatter
           path: ./
           command: --level max --error-format=sarif > phpstan-results.sarif
           # vendored_phpstan_path: custom-phpstan.phar
